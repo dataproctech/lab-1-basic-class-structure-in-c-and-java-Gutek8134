@@ -1,18 +1,27 @@
-// include the necessary libraries
+#include<iostream>
 
-class Car {
-    //attributes
+class Car{
+public:
+    std::string make;
+    std::string model;
+    int year;
 
-    // Constructor
-
-    // Method to display car information
-   
+    Car(std::string _make, std::string _model, int _year);
+    void displayInfo() const;
 };
 
-int main() {
-    // Create a Car object
-    
-    // Display car details
-    
+Car::Car(std::string _make, std::string _model, int _year){
+    this->make = _make;
+    this->model = _model;
+    this->year = _year;
+}
+
+void Car::displayInfo() const{
+    std::cout << "Make: " << this->make << "\nModel: " << this->model << "\nYear: " << this->year << std::endl;
+}
+
+int main(){
+    auto car1 = Car("Mercedes", "Benc", 2002);
+    car1.displayInfo();
     return 0;
 }
